@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Contact Form</title>
+  <style>
+    /* Add custom styles here if needed */
+  </style>
+</head>
+<body>
+    <h2 class="mt-5">Recorded Data</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody id="recordedData">
+        <!-- Data will be populated here -->
+      </tbody>
+    </table>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function submitForm() {
+      // Get form values
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+  
+      // Create a new row in the table to record data
+      const tableBody = document.getElementById('recordedData');
+      const newRow = tableBody.insertRow(tableBody.rows.length);
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+      const cell3 = newRow.insertCell(2);
+      const cell4 = newRow.insertCell(3);
+  
+      // Populate cells with form values
+      cell1.textContent = name;
+      cell2.textContent = email;
+      cell3.textContent = subject;
+      cell4.textContent = message;
+  
+      // Clear the form fields
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+
+</body>
+</html>
